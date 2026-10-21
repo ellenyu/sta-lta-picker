@@ -1,0 +1,78 @@
+# Enable P pick on horizontals
+picker.PonH=false
+# Enable S pick on verticals
+picker.SonV=false
+#perform addition noise test based on average rectified pre-event noise amps vs. 1st 3 peak amps
+picker.altNoiseTest=true
+#load channel parms from file when properties are set
+picker.autoLoadChannelParms=true
+# file containing picker params for each channel
+#picker.chanParmFile=pickEW-alt3.parms
+picker.chanParmFile=pickEW.parms
+# debug level messages:
+picker.debug=false
+#picker.debug=true
+# first motion in phase descriptor for horizontal channel
+picker.firstMoOnHoriz=false
+# first motion in phase descriptor for S phase
+picker.firstMoOnS=false
+# minimum quality acceptable for first motion in phase descriptor
+picker.firstMoQualityMin=.7
+#samples intervals to substract from pick time to compensate for lag
+picker.lagAdjustment=1
+#log results of sample function, one-line of stats per timeseries sample, very verbose only for debugging 
+picker.logSamples=false
+# line slope     A where: maxDistKmRangeToPick= min(maxKm, A*magnitude+B)
+picker.magDistSlope=85.
+# line intercept B where: maxDistKmRangeToPick= min(maxKm, A*magnitude+B)
+picker.magDistIntercept=10.
+# Regardless of magnitude don't pick if channel distance exceeds maxkm
+picker.maxDistance=100.
+#First peaks counts must exceed minPeakSNR*absAvgNoiseAtPick
+#picker.minPeakSNR=2.
+## try hight ratio to force noise rejection?
+picker.minPeakSNR=3.
+#max gap samples to interpolate
+picker.maxSampleGap=15
+#
+# Use these default picker parms below when no channel parms file is defined
+picker.parm.PickFlag=3
+picker.parm.Itr1=3
+picker.parm.MinSmallZC=10
+picker.parm.MinBigZC=3
+picker.parm.MinPeakSize=20
+picker.parm.MaxMint=500
+picker.parm.RawDataFilt=0.939
+picker.parm.CharFuncFilt=3.0
+picker.parm.StaFilt=0.40
+picker.parm.LtaFilt=0.015
+picker.parm.EventThresh=5.0
+picker.parm.RmavFilt=.9961
+#
+#samples to scan before starting to scan for pick event
+picker.restartLength=200
+# seconds to scan before pick window to accumulate sample stats (aka restart)
+picker.scanStartOffset=2.
+# seconds to scan for end of pick past end of pick window
+picker.scanEndOffset=1.
+# Fraction of max distance acceptable for a S-pick if channel distance is known
+picker.sMaxDistScalar=.6
+picker.sDownWeightByOne=false
+# pick only channels whose gain is velocity units
+picker.velocityOnly=true
+# half-width seconds before/after predicted arrival time to scan for pick
+picker.windowHalfWidth=1.5
+# verbose level messages:
+picker.verbose=true
+#
+# Optional properties to filter parms list for accepted channels:
+#picker.candidateListName=
+#picker.allowedStaTypes=
+#picker.allowedSeedChanTypes=
+#picker.allowedNetTypes=
+#picker.rejectedStaTypes=
+#picker.rejectedSeedChanTypes=
+#picker.rejectedNetTypes=
+#picker.filterByCandidateList=false
+#picker.useMasterListCandidateList=false
+

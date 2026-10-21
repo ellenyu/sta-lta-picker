@@ -1,0 +1,10 @@
+build/
+
+# Local test data and outputs
+*.ms
+*.mseed
+*_picks.json
+*.png
+
+# Local plotting helper, not part of the tool
+plot_picks.py
