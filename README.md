@@ -76,6 +76,15 @@ ANSS output validates against `anss-data-formats/python` (`anssformats.pick.Pick
 * Jiggle's leap-second table has no DB here, so it falls back to its built-in table. Conversions into and out of Jiggle use that same table, so output UTC times are unaffected.
 * The JVM may grow its heap well beyond what a day-long channel needs; `java -Xmx512m` is plenty for one day of 100 sps data.
 
+## License
+
+The code in this repository is released under the MIT License (see `LICENSE`). The bundled third-party jars in `libs/` are **not** covered by that license; each keeps its own upstream terms:
+
+* `libs/jiggle_p8g-599881c.jar`: Jiggle, built from [aqms-jiggle](https://gitlab.com/aqms-swg/aqms-jiggle) (AQMS). See that repository for its terms of use and redistribution.
+* `libs/gson-2.10.1.jar`: [Gson](https://github.com/google/gson), Apache License 2.0.
+
+`config/pickEW.props` and `config/pickEW.parms` are picker configuration copied from the AQMS lambdapickew proof of concept.
+
 ## References
 
 * Jiggle, part of the AQMS code base: https://gitlab.com/aqms-swg/aqms-jiggle
