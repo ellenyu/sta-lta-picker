@@ -79,4 +79,4 @@ ANSS output validates against `anss-data-formats/python` (`anssformats.pick.Pick
 ## References
 
 * Jiggle, part of the AQMS code base: https://gitlab.com/aqms-swg/aqms-jiggle
-* AQMS (ANSS Quake Monitoring System): https://doi.org/10.1785/0220190219
+* AQMS (ANSS Quake Monitoring System): Hartog, J. R., P. A. Friberg, V. C. Kress, P. Bodin, and R. Bhadha (2019). Open‐Source ANSS Quake Monitoring System Software. *Seismological Research Letters* 91 (2A): 677–686. https://doi.org/10.1785/0220190219
