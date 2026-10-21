@@ -80,7 +80,7 @@ ANSS output validates against `anss-data-formats/python` (`anssformats.pick.Pick
 
 The code in this repository is released under the MIT License (see `LICENSE`). The bundled third-party jars in `libs/` are **not** covered by that license; each keeps its own upstream terms:
 
-* `libs/jiggle_p8g-599881c.jar`: Jiggle, built from [aqms-jiggle](https://gitlab.com/aqms-swg/aqms-jiggle) (AQMS). See that repository for its terms of use and redistribution.
+* `libs/jiggle_p8g-599881c.jar`: Jiggle, open-source software built from [aqms-jiggle](https://gitlab.com/aqms-swg/aqms-jiggle), part of the open-source AQMS code base. See that repository for its license terms.
 * `libs/gson-2.10.1.jar`: [Gson](https://github.com/google/gson), Apache License 2.0.
 
 `config/pickEW.props` and `config/pickEW.parms` are picker configuration copied from the AQMS lambdapickew proof of concept.
