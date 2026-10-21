@@ -1,13 +1,13 @@
 # localpickew — local STA/LTA picker for miniSEED
 
-Runs Jiggle's Earthworm-style STA/LTA picker (`org.trinet.jasi.picker.PickEW`) on local miniSEED files and writes **every** pick as a JSON array, in either the ANSS Pick format (`anss-data-formats/format-docs/Pick.md`, the default) or the SCSN SOA pick format (`formats/format-docs/pick.md`, `--format soa`). No database, no AWS. It is meant to feed an associator, so picks are unassociated.
+Runs the Earthworm-style STA/LTA picker (`org.trinet.jasi.picker.PickEW`) from [Jiggle](https://gitlab.com/aqms-swg/aqms-jiggle), part of the AQMS (ANSS Quake Monitoring System) code base, on local miniSEED files and writes **every** pick as a JSON array, in either the ANSS Pick format (`anss-data-formats/format-docs/Pick.md`, the default) or the SCSN SOA pick format (`formats/format-docs/pick.md`, `--format soa`). No database, no AWS. It is meant to feed an associator, so picks are unassociated.
 
 It uses the same picker classes, `pickEW.props` and `pickEW.parms` as the `lambdapickew` POC, but works on continuous data. The lambda stopped after the first P/S per channel.
 
 ## Dependencies
 
 * Java 8 or newer (`javac` and `jar` to build)
-* `libs/jiggle_p8g-599881c.jar`: the same Jiggle build the lambda uses (from https://gitlab.com/aqms-swg/aqms-jiggle)
+* `libs/jiggle_p8g-599881c.jar`: the same Jiggle build the lambda uses, built from [aqms-jiggle](https://gitlab.com/aqms-swg/aqms-jiggle)
 * `libs/gson-2.10.1.jar`
 
 ## Build and run
@@ -75,3 +75,8 @@ ANSS output validates against `anss-data-formats/python` (`anssformats.pick.Pick
 * The serialized `channelList.cache` must have been written by a compatible Jiggle jar. If you swap in a newer jar, regenerate it with `cacheWrite.sh`.
 * Jiggle's leap-second table has no DB here, so it falls back to its built-in table. Conversions into and out of Jiggle use that same table, so output UTC times are unaffected.
 * The JVM may grow its heap well beyond what a day-long channel needs; `java -Xmx512m` is plenty for one day of 100 sps data.
+
+## References
+
+* Jiggle, part of the AQMS code base: https://gitlab.com/aqms-swg/aqms-jiggle
+* AQMS (ANSS Quake Monitoring System): https://doi.org/10.1785/0220190219
